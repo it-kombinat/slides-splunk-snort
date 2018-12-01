@@ -66,16 +66,23 @@
 										- Provisioning EC2 Instance - Splunk as a Service (SpaaS)
 										- Deploying SpaaS + Snort and Cowrie - Onboarding
 										- Provisioning E2 Instance for Badguy
-										- Badguy Attacking
-										- Perfoming some Dashboard searches
+										- Password Brute-Force Attacking by Badguy
+										- Performing Dashboard searches and Honeypot interaction
 										</script>
 									</section>
                                 <section data-markdown>
                                         <script type="text/template">
-                                        ## Splunk search - failed password login
+                                        ## Generating Artificial Snort Alerts
                                         ```groovy
-                                        Code
-                                        
+                                        nmap -Pn -p 22 snort-hostname/ipadddress
+                                        ```
+                                        </script>
+									 </section>
+								<section data-markdown>
+                                        <script type="text/template">
+                                        ## Splunk search - Badguy container logs, password attempt
+                                        ```groovy
+                                        `macro_docker_logs` host=* docker_container_id=* docker_stream=* (docker_labels="*" OR host="*") docker_container_unique_name="badguy*"| table _time, docker_container_unique_name, docker_stream, _raw
                                         ```
                                         </script>
 									 </section>
