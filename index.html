@@ -26,9 +26,9 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>Splunk Demo</h1>
+					<h1>SpaaS with Ansible</h1>
 					<img height="40%" width="40%" src="images/ansible-splunk.png" style="border: 0; box-shadow: none"/>
-					<h2>Deploying Splunk, Snort and Cowrie with Ansible</h2>
+					<h2>Deploying Splunk (Splunk as a Service), Snort and Cowrie with Ansible</h2>
 				</section>
 				<section data-markdown>
 				    <script type="text/template">
@@ -70,6 +70,18 @@
 										- Performing Dashboard searches and Honeypot interaction
 										</script>
 									</section>
+								<section data-markdown>
+                                       <script type="text/template">
+                                        ## Splunk props.conf - Settings for SNORT
+										```groovy
+										[source::tcp:1514]
+										SHOULD_LINEMERGE=true
+										BREAK_ONLY_BEFORE = \[\*\*\] \[\d+\:\d+\:\d+\]
+										TIME_PREFIX = (?=\d+/\d+)
+										TIME_FORMAT = %m/%d-%T.%6N
+                                        ```
+                                        </script>
+									 </section>
                                 <section data-markdown>
 										<script type="text/template">
                                         ## Generating Artificial Snort Alerts
