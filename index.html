@@ -73,15 +73,15 @@
 								<section data-markdown>
                                        <script type="text/template">
                                         ## Splunk props.conf - Settings for SNORT
-										```groovy
-										[source::tcp:1514]
-										SHOULD_LINEMERGE=true
-										BREAK_ONLY_BEFORE = \[\*\*\] \[\d+\:\d+\:\d+\]
-										TIME_PREFIX = (?=\d+/\d+)
-										TIME_FORMAT = %m/%d-%T.%6N
+					```groovy
+					[source::tcp:1514]
+					SHOULD_LINEMERGE=true
+					BREAK_ONLY_BEFORE = \[\*\*\] \[\d+\:\d+\:\d+\]
+					TIME_PREFIX = (?=\d+/\d+)
+					TIME_FORMAT = %m/%d-%T.%6N
                                         ```
                                         </script>
-									 </section>
+				        </section>
                                 <section data-markdown>
 										<script type="text/template">
                                         ## Generating Artificial Snort Alerts
