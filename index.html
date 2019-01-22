@@ -69,7 +69,7 @@
                                         <h2>Availabilty Zones and Regions</h2>
 					 <img height="80%" width="80%" src="images/vpc-az-regions.png" style="border: 0; box-shadow: none"/>
                                         </section>
-					<section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+					<section data-markdown>
                                         <script type="text/template">
                                         ## Availability Zone Characteristics and Best practice
                                         - Distinct physical location
@@ -77,8 +77,6 @@
                                         - Independent power, cooling, network, security
                                         - Always partition app stacks across 2 or more AZs
 					- ELB across instances in multiple AZs
-					Note:
-					This will only display in notes window
                                         </script>
                                         </section>
 					 <section data-markdown>
@@ -86,7 +84,8 @@
                                         ## Region Characteristics and Best practice
                                         - Functionally separate
                                         - Composed of 2 or more AZs
-                                        - Connected via the public internet 
+                                        - Connected via the public internet
+					---
                                         - Use region to have functionality geographically close to customers
 					- Comply with national laws and practices
 					- Implement a DR strategy
