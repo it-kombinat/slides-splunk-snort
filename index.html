@@ -42,13 +42,15 @@
                                         <h2>Splunk Deployment on EC2 with Ansible</h2>
                                         <img height="100%" width="100%" src="images/ec2-setup-snort-cowrie.png" style="border: 0; box-shadow: none"/>
 				        </section>
-					<section>
-					<h2>Characteristics of Cloud Computing</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+					<section data-markdown>
+					<script type="text/template">
+					## Characteristics of Cloud Computing
+					- On-demand self-service
+					- Broad network access
+					- Resource pooling
+					- Rapid elasticity
+					- Measured service
+					</script>
                                         </section>
 					<section>
                                         <!-- <h2>AWS EC2 Architecture</h2> -->
@@ -63,16 +65,31 @@
                                         - Key Pairs - EC2 uses public - key cryptography
                                         </script>
                                         </section>
+					<section>
+                                        <h2>Availabilty Zones and Regions</h2>
+					 <img height="100%" width="100%" src="images/vpc-az-regions.png" style="border: 0; box-shadow: none"/>
+                                        </section>
 					<section data-markdown>
                                         <script type="text/template">
-                                        ## Availabilty Zones and Regions
-                                        - EC2 uses Xen virtualization. Each virtual machine, called an “instance”
-                                        - AMI - Amazon Machine Image
-                                        - Security Groups - acts as a virtual firewall to control inbound and outbound traffic
-                                        - Key Pairs - EC2 uses public - key cryptography
+                                        ## Availability Zone Characteristics and Best practice
+                                        - Distinct physical location
+                                        - Low-latency network connections between AZ
+                                        - Independent power, cooling, network, security
+                                        -> Always partition app stacks across 2 or more AZs
+					-> ELB across instances in multiple AZs
                                         </script>
                                         </section>
-
+					 <section data-markdown>
+                                        <script type="text/template">
+                                        ## Region Characteristics and Best practice
+                                        - Functionally separate
+                                        - Composed of 2 or more AZs
+                                        - Connected via the public internet 
+                                        -> Use region to have functionality geographically close to customers
+					-> Comply with national laws and practices
+					-> Implement a DR strategy
+                                        </script>
+                                        </section>
                                 </section>
 				    <section data-markdown>
                                     <script type="text/template">
