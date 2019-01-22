@@ -83,13 +83,13 @@
 					 <section data-markdown>
                                         <script type="text/template">
 										## Region Characteristics and Best practice
-										* Functionally separate
-										* Composed of 2 or more AZs
-										* Connected via the public internet
-										* Use region to:
-											* Have functionality geographically close to customers
-											* Comply with national laws and practices
-											* Implement a DR strategy
+										- Functionally separate
+										- Composed of 2 or more AZs
+										- Connected via the public internet
+										- Use region to:
+											- Have functionality geographically close to customers
+											- Comply with national laws and practices
+											- Implement a DR strategy
                                         </script>
                                         </section>
                                 </section>
@@ -131,28 +131,27 @@
 					</script>
 				</section>
 				<section data-markdown>
-                                ## Splunk props.conf - Settings for SNORT
-                                <pre><code>
+                ## Splunk props.conf - Settings for SNORT
+                <pre><code>
 				[source::tcp:1514]
 				SHOULD_LINEMERGE=true
 				BREAK_ONLY_BEFORE = \[\*\*\] \[\d+\:\d+\:\d+\]
 				TIME_PREFIX = (?=\d+/\d+)
 				TIME_FORMAT = %m/%d-%T.%6N
-                                </code></pre>
-                                </section>
-                                <section data-markdown>
-                                ## Generating Artificial Snort Alerts
-                                <pre><code>
-                                nmap -Pn -p 22 snort-hostname/ipadddress
-                                </code></pre>
-                                </section>
-                                <section data-markdown>
-                                ## Splunk search - Badguy container logs, password attempt
-                                <code><pre>
-                                `macro_docker_logs` host=* docker_container_id=* docker_stream=* (docker_labels="*" OR host="*") docker_container_unique_name="badguy*"| table _time, docker_container_unique_name, docker_stream, _raw
-                                </code></pre>
+                </code></pre>
+                </section>
+				<section data-markdown>
+				## Generating Artificial Snort Alerts
+				<pre><code>
+				nmap -Pn -p 22 snort-hostname/ipadddress
+				</code></pre>
 				</section>
-			</section>
+				<section data-markdown>
+				## Splunk search - Badguy container logs, password attempt
+				<code><pre>
+				`macro_docker_logs` host=* docker_container_id=* docker_stream=* (docker_labels="*" OR host="*") docker_container_unique_name="badguy*"| table _time, docker_container_unique_name, docker_stream, _raw
+				</code></pre>
+				</section>
 				</section>
 				<section data-markdown>
                                 <script type="text/template">
