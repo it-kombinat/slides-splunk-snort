@@ -142,15 +142,15 @@
                                 </section>
                                 <section data-markdown>
                                 ## Generating Artificial Snort Alerts
-				<pre><code>
+                                <pre><code>
                                 nmap -Pn -p 22 snort-hostname/ipadddress
-				</code></pre>
-				</section>
-				<section data-markdown>
+                                </code></pre>
+                                </section>
+                                <section data-markdown>
                                 ## Splunk search - Badguy container logs, password attempt
-				<code><pre>
+                                <code><pre>
                                 `macro_docker_logs` host=* docker_container_id=* docker_stream=* (docker_labels="*" OR host="*") docker_container_unique_name="badguy*"| table _time, docker_container_unique_name, docker_stream, _raw
-				</code></pre>
+                                </code></pre>
 				</section>
 			</section>
 				</section>
