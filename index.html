@@ -75,8 +75,11 @@
                                         - Distinct physical location
                                         - Low-latency network connections between AZ
                                         - Independent power, cooling, network, security
-                                        -> Always partition app stacks across 2 or more AZs
-					-> ELB across instances in multiple AZs
+                                        - Always partition app stacks across 2 or more AZs
+					- ELB across instances in multiple AZs
+					<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+					</aside>
                                         </script>
                                         </section>
 					 <section data-markdown>
@@ -85,9 +88,9 @@
                                         - Functionally separate
                                         - Composed of 2 or more AZs
                                         - Connected via the public internet 
-                                        -> Use region to have functionality geographically close to customers
-					-> Comply with national laws and practices
-					-> Implement a DR strategy
+                                        - Use region to have functionality geographically close to customers
+					- Comply with national laws and practices
+					- Implement a DR strategy
                                         </script>
                                         </section>
                                 </section>
@@ -139,19 +142,17 @@
                                 </code></pre>
                                 </section>
                                 <section data-markdown>
-				<script type="text/template">
                                 ## Generating Artificial Snort Alerts
-                                ```groovy
+				<pre><code>
                                 nmap -Pn -p 22 snort-hostname/ipadddress
-                                ```
+				</code></pre>
                                 </script>
 				</section>
 				<section data-markdown>
-                                <script type="text/template">
                                 ## Splunk search - Badguy container logs, password attempt
-                                ```groovy
+				<code><pre>
                                 `macro_docker_logs` host=* docker_container_id=* docker_stream=* (docker_labels="*" OR host="*") docker_container_unique_name="badguy*"| table _time, docker_container_unique_name, docker_stream, _raw
-                                ```
+				</code></pre>
                                 </script>
 			</section>
 				</section>
