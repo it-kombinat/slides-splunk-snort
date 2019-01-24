@@ -162,10 +162,6 @@
 						```sh
 						nmap -Pn -p 22 snort-hostname/ipadddress
 						```
-					- Splunk search - Badguy container logs, password attempt
-						```sh
-						`macro_docker_logs` host=* docker_container_id=* docker_stream=* (docker_labels="*" OR host="*") docker_container_unique_name="badguy*"| table _time, docker_container_unique_name, docker_stream, _raw
-						```
 					</script>
 				</section>
 				</section>
