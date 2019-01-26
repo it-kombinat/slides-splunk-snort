@@ -73,10 +73,9 @@
 											- General Purpose instances have GBs to TBs    
 											- Storage Optmized instances have up to 48 TB!    
 											- Data is lost when the instance dies!!!
-										- EBS Elastic Block Storage
+										- EBS - Elastic Block Storage
 											- Persistent block level storage volumes for use with EC2 instances
 											- Data is not lost when instance dies – can be remounted with new instance
-											- Each EBS volume is replicated within its AZ
 										- S3 - Simple Storage Service
 											- Online cloud storage service(files,data,etc...)
 											- Need this for backup purposes(Snapshots)
@@ -133,7 +132,7 @@
 										- Splunk analyzes data from various AWS sources
 									- Splunk App for AWS
 										- Analytics and dashboards of AWS ecosystem
-									<img height="60%" width="60%" src="images/splunk-aws-app.png" style="border: 0; box-shadow: none"/>
+									<img height="70%" width="70%" src="images/splunk-aws-app.png" style="border: 0; box-shadow: none"/>
 									</script>
 								</section>
 						<section data-markdown>
@@ -152,7 +151,8 @@
                                     ## Running Splunk in a Container
                                     - Apps for SNORT, Cowrie and Docker pre-installed in Docker [Image](https://hub.docker.com/r/stackware/spl)
                                     - HTTP Event Collector (HEC) enabled and configured
-                                    - pre-configured input.conf and props.conf 
+									- pre-configured input.conf and props.conf
+									- 2018/10/24 - [Announcing splunk-on-docker](https://www.splunk.com/blog/2018/10/24/announcing-splunk-on-docker.html)
                                     </script>
 							   </section>
 					
