@@ -62,9 +62,27 @@
                                         - EC2 uses Xen virtualization. Each virtual machine, called an “instance”
                                         - AMI - Amazon Machine Image / [Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)
                                         - Security Groups - acts as a virtual firewall to control inbound and outbound traffic
-                                        - Key Pairs - EC2 uses public - key cryptography
-                                        </script>
-                                        </section>
+										- Key Pairs - EC2 uses public - key cryptography
+										- Pay-as-you-go [pricing model](https://blog.boltops.com/2018/07/13/on-demand-vs-reserved-vs-spot-aws-ec2-pricing-comparison)
+										</script>
+										</section>
+										<section data-markdown>
+										<script type="text/template">
+										## Instance Storage
+										- Instances have ephemeral storage (Current Gen has SSDs)
+											- General Purpose instances have GBs to TBs    
+											- Storage Optmized instances have up to 48 TB!    
+											- Data is lost when the instance dies!!!
+										- EBS Elastic Block Storage
+											- Persistent block level storage volumes for use with EC2 instances
+											- Data is not lost when instance dies – can be remounted with new instance
+											- Each EBS volume is replicated within its AZ
+										- S3 - Simple Storage Service
+											- Online cloud storage service(files,data,etc...)
+											- Need this for backup purposes(Snapshots)
+											- Can also be used as a data feed for Splunk, TA available 
+										</script>
+										</section>
 					<section>
                                         <h2>Availabilty Zones and Regions</h2>
 					 <img height="60%" width="60%" src="images/vpc-az-regions.png" style="border: 0; box-shadow: none"/>
@@ -106,6 +124,27 @@
 										- ECS/EKS ...
 									</script>
 								</section>
+						<section data-markdown>
+                                    <script type="text/template">
+									## Splunk App for AWS
+									- Splunk Add-On
+										- Data Collection for Cloudtrail, Cloudwatch, Config, EC2
+										  EBS, S3 and more.
+										- Splunk analyzes data from various AWS sources
+									- Splunk App for AWS
+										- Analytics and dashboards of AWS ecosystem
+									<img height="60%" width="60%" src="images/splunk-aws-app.png" style="border: 0; box-shadow: none"/>
+									</script>
+								</section>
+						<section data-markdown>
+                            		<script type="text/template">
+									## Splunk - AWS - Cloudformation
+									- CloudFormation template can launch an entire Splunk in minutes
+									- Splunk provides several templates, they’re available on the Splunk
+									  [github page](https://github.com/splunk/splunk-aws-cloudformation)
+									- Further information - [Splunk Whitepaper](https://www.splunk.com/pdfs/white-papers/splunk-enterprise-on-aws-deployment-guidelines.pdf)
+									</script>
+								</section>
 
 					</section>
 				    <section data-markdown>
@@ -115,7 +154,8 @@
                                     - HTTP Event Collector (HEC) enabled and configured
                                     - pre-configured input.conf and props.conf 
                                     </script>
-                               </section>
+							   </section>
+					
 					<section>
 					 <h2>Splunk Sources Onborading</h2>
 					 <img height="100%" width="100%" src="images/splunk-sources.jpg" style="border: 0; box-shadow: none"/>
