@@ -61,8 +61,8 @@
                                         ## Amazon Elastic Compute Cloud
                                         - EC2 uses Xen virtualization. Each virtual machine, called an “instance”
                                         - AMI - Amazon Machine Image / [Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)
-                                        - Security Groups - acts as a virtual firewall to control inbound and outbound traffic
-										- Key Pairs - EC2 uses public - key cryptography
+										- Security Groups - acts as a virtual firewall to control inbound and outbound traffic
+										- Key Pairs - EC2 uses public - key cryptography 
 										- Pay-as-you-go [pricing model](https://blog.boltops.com/2018/07/13/on-demand-vs-reserved-vs-spot-aws-ec2-pricing-comparison)
 										</script>
 										</section>
@@ -70,15 +70,13 @@
 										<script type="text/template">
 										## Instance Storage
 										- Instances have ephemeral storage (Current Gen has SSDs)
-											- General Purpose instances have GBs to TBs    
-											- Storage Optmized instances have up to 48 TB!    
+											- size depending on the purpose of the instance    
 											- Data is lost when the instance dies!!!
 										- EBS - Elastic Block Storage
 											- Persistent block level storage volumes for use with EC2 instances
 											- Data is not lost when instance dies – can be remounted with new instance
 										- S3 - Simple Storage Service
 											- Online cloud storage service(files,data,etc...)
-											- Need this for backup purposes(Snapshots)
 											- Can also be used as a data feed for Splunk, TA available 
 										</script>
 										</section>
@@ -146,13 +144,68 @@
 								</section>
 
 					</section>
+					<section>
+						<section data-markdown>
+									<script type="text/template">
+									## Ansible on AWS - What is Ansible?
+									- Open Source configuration management platform written in Python
+									- Full conf. management, deployment and orchestration
+									- secure by using SSH for connections
+									- agent-less
+									</script>
+								</section>
+						<section data-markdown>
+									<script type="text/template">
+									## How does Ansible work?
+									- Ansible performs tasks on hosts and calls modules to perfom them
+									- Ansible runs through its tasks on set of host
+									- Tasks make changes only if necessary
+									</script>
+								</section>
+						<section data-markdown>
+									<script type="text/template">
+									## How Ansible Cloud Modules work
+									<img height="80%" width="80%" src="images/ansible-aws-modules-works.png" style="border: 0; box-shadow: none"/>
+									</script>
+								</section>
+						<section data-markdown>
+									<script type="text/template">
+									## Ansible - Inventory File
+									- Ansible need to know where to run
+									- It can be static and manually maintened
+									```sh
+									localhost ansible_connection=local # Host
+									[webservers] # Group
+									10.10.10.10 ansible_user=ec2-user ansible_ssh_private_key_file=~/.ssh/aws.pem
+									10.10.10.20
+									[dbservers]
+									one.example.com
+									```
+									</script>
+								</section>
+						<section data-markdown>
+									<script type="text/template">
+									## Ansible - Dynamic Inventory
+									- Inventory ﬁle that is generated automatically at runtime by a script 
+									- Useful for cloud environments because hosts and their addresses change often
+									- Script makes API calls to cloud provider and uses information to generate inventory ﬁle
+									- Scripts for AWS, Openstack etc.
+									</script>
+								</section>
+						<section data-markdown>
+									<script type="text/template">
+									## Ansible - Architechture
+									<img height="90%" width="90%" src="images/ansible-architecture.png" style="border: 0; box-shadow: none"/>
+									</script>
+								</section>
+					</section>
 				    <section data-markdown>
                                     <script type="text/template">
                                     ## Running Splunk in a Container
                                     - Apps for SNORT, Cowrie and Docker pre-installed in Docker [Image](https://hub.docker.com/r/stackware/spl)
                                     - HTTP Event Collector (HEC) enabled and configured
 									- pre-configured input.conf and props.conf
-									- 2018/10/24 - [Announcing splunk-on-docker](https://www.splunk.com/blog/2018/10/24/announcing-splunk-on-docker.html)
+									- As of 2018/10/24 - [Announcing splunk-on-docker](https://www.splunk.com/blog/2018/10/24/announcing-splunk-on-docker.html)
                                     </script>
 							   </section>
 					
