@@ -149,6 +149,7 @@
 									<script type="text/template">
 									## Ansible on AWS - What is Ansible?
 									- Open Source configuration management platform written in Python
+									- Human- and machine-readable configuration (YAML)
 									- Full conf. management, deployment and orchestration
 									- secure by using SSH for connections
 									- agent-less
@@ -189,7 +190,16 @@
 									- Inventory ﬁle that is generated automatically at runtime by a script 
 									- Useful for cloud environments because hosts and their addresses change often
 									- Script makes API calls to cloud provider and uses information to generate inventory ﬁle
-									- Scripts for AWS, Openstack etc.
+									- [Scripts](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html) for AWS, Openstack etc.
+									</script>
+								</section>
+						<section data-markdown>
+									<script type="text/template">
+									## Ansible - Playbooks
+									- are expressed in the YAML format 
+									- Each Playbook is composed of one or more **plays** in a list
+									- consist of variables, tasks, handlers, files and roles
+									- Roles are used to structure complex playbooks
 									</script>
 								</section>
 						<section data-markdown>
