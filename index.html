@@ -136,7 +136,7 @@
 						<section data-markdown>
                             		<script type="text/template">
 									## Splunk - AWS - Cloudformation
-									- CloudFormation template can launch an entire Splunk in minutes
+									- [CloudFormation](https://aws.amazon.com/cloudformation/) template can launch an entire Splunk in minutes
 									- Splunk provides several templates, they’re available on the Splunk
 									  [github page](https://github.com/splunk/splunk-aws-cloudformation)
 									- Further information - [Splunk Whitepaper](https://www.splunk.com/pdfs/white-papers/splunk-enterprise-on-aws-deployment-guidelines.pdf)
@@ -203,7 +203,7 @@
                                     <script type="text/template">
                                     ## Running Splunk in a Container
                                     - Apps for SNORT, Cowrie and Docker pre-installed in Docker [Image](https://hub.docker.com/r/stackware/spl)
-                                    - HTTP Event Collector (HEC) enabled and configured
+									- HTTP Event Collector (HEC) enabled and configured
 									- pre-configured input.conf and props.conf
 									- As of 2018/10/24 - [Announcing splunk-on-docker](https://www.splunk.com/blog/2018/10/24/announcing-splunk-on-docker.html)
                                     </script>
@@ -267,10 +267,6 @@
 						| sort - count
 						| iplocation src_ip
 						| geostats latfield=lat longfield=lon count by name
-						```
-					- Badguy see latest logs
-						```sh
-						sudo docker logs –f <container_id>
 						```
 					- Show Docker mounts - for cowrie
 						```sh
